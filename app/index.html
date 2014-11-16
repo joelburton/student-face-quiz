@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="students.css"/>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+    <script src="students.js"></script>
+</head>
+
+<body ng-app="studentsFaceQuiz" ng-controller="FaceQuizCtrl as c">
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Face Quiz</h1>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <img class="photo img-responsive" ng-src="{{ c.studentPhoto }}"
+                 ng-click="c.randomize()">
+            <div class="name"><b>{{ c.studentName }}</b></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
