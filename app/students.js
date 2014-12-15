@@ -7,12 +7,12 @@ angular.module('studentsFaceQuiz', ['firebase'])
         var students = $firebase(firebaseRef).$asArray();
 
         self.randomize = function () {
-            if (self.upcoming)
-                $timeout.cancel(self.upcoming);
+            if (self.upcomingName)
+                $timeout.cancel(self.upcomingName);
             var i = Math.floor(Math.random() * students.length);
             self.studentName = "";
             self.studentPhoto = students[i]['photo'];
-            self.upcoming = $timeout(function () {
+            self.upcomingName = $timeout(function () {
                 self.studentName = students[i]['name'];
             }, 3000)
         };
